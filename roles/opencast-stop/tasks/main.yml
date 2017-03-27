@@ -1,0 +1,8 @@
+---
+
+- name: Stopping Opencast
+  action: service
+    name=opencast
+    state=stopped
+    enabled=yes
+  become: yes

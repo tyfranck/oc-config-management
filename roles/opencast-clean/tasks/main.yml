@@ -1,0 +1,14 @@
+---
+
+- name: Cleaning Opencast node filesystem
+  shell: "rm -rf {{ item }}/*"
+  become: yes
+  with_items:
+    - "{{ oc_log_dir }}"
+    - "{{ oc_local_dir }}"
+
+- name: Cleaning Opencast shared filesystem
+  shell: "rm -rf {{ item }}/*"
+  become: yes
+  with_items:
+    - "{{ oc_storage_dir }}"
